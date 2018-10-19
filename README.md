@@ -1,2 +1,3 @@
 # javascript-algorithms
-My solutions to Javascript algorithms from various sites
+
+This repository features my own solutions to Javascript algorithms from various websites — Coderbyte, FreeCodeCamp, Hackerrank, Leetcode, Codewars, etc.
