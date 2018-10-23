@@ -11,29 +11,21 @@ let romanKeys = {
 var romanToInt = function(s) {
   let split = s.split(''), result = 0;
   split.forEach((char, index) => {
-    switch (char + split[index + 1]) {
+    let nextChar = split[index + 1]
+    switch (char + nextChar) {
       case 'CD':
-        result += 400;
-        deleteNextCharacter(index, split);
-        break;
       case 'CM':
-        result += 900;
+        result += romanKeys[nextChar] - 100;
         deleteNextCharacter(index, split);
         break;
       case 'XL':
-        result += 40;
-        deleteNextCharacter(index, split);
-        break;
       case 'XC':
-        result += 90;
+        result += romanKeys[nextChar] - 10;
         deleteNextCharacter(index, split);
         break;
       case 'IV':
-        result += 4;
-        deleteNextCharacter(index, split);
-        break;
       case 'IX':
-        result += 9;
+        result += romanKeys[nextChar] - 1;
         deleteNextCharacter(index, split);
         break;
       default:
