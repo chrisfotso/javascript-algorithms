@@ -17,5 +17,3 @@ var maxProfit = function(prices) {
     }
     return profit;
 };
-
-maxProfit([2, 4, 1])
