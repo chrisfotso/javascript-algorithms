@@ -11,7 +11,7 @@ const board = [
 ];
 
 function sudokuChecker(board) {
-console.log([rowChecker(board), columnChecker(board), squareChecker(board)].every(result => result));
+return [rowChecker(board), columnChecker(board), squareChecker(board)].every(result => result);
 
 function rowChecker(sudokuBoard) {
   let boardCopy = JSON.parse(JSON.stringify(sudokuBoard));
