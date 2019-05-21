@@ -1,17 +1,11 @@
-const majorityElement = (nums) => {
-  let newArr = [], longestArr = [], tempArr;
-  nums.forEach(num => {
-    if (!newArr.includes(num))
-    newArr.push(num);
-  });
-  for (let elem of newArr) {
-    tempArr = getTempArr(elem, nums);
-    if (tempArr.length > longestArr.length) {
-      longestArr = tempArr;
+const majorityElement = nums => {
+    const numberQtys = {};
+    const majorityQty =  nums.length / 2;
+    
+    for (let i = 0; i < nums.length; i++) {
+        const currNum = nums[i];
+        numberQtys[currNum] = ++numberQtys[currNum] || 1;
+        
+        if (numberQtys[currNum] >= majorityQty) return currNum;
     }
-  }
-  return longestArr[0];
-}
-const getTempArr = (num, arr) => {
-  return arr.filter(elem => elem === num);
 }
